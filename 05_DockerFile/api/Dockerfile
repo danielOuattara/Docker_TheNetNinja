@@ -1,7 +1,7 @@
 # parent image 
-FROM node:17-alpine 
+FROM node:18.13-alpine3.16 
 
-WORKDIR /app
+WORKDIR /server
 
 # source code
 COPY . .
@@ -9,9 +9,11 @@ COPY . .
 # install dependencies
 RUN npm install
 
-EXPOSE 4000
 # required for docker desktop port mapping
+EXPOSE 4000
 
+
+# on runtime
 CMD ["node", "app.js"]
 
 # to build the image (in the same image as the Dockerfile )
