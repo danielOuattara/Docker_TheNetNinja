@@ -1,5 +1,5 @@
 # parent image 
-FROM node:16-alpine 
+FROM node:18.13-alpine3.16 
 RUN npm i -g nodemon
 
 WORKDIR /app
